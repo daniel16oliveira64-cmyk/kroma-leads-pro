@@ -5,7 +5,6 @@
   navBtns.forEach(b => b.addEventListener('click', () => {
     // app.js already switches the view; here we only fix which item looks active.
     setTimeout(() => {
-      navBtns.forEach(x => x.classList.toggle('active', x === b));
       document.body.dataset.view = b.dataset.view;
       if (b.dataset.focus === 'validation') {
         const f = $('digitalFilter'); if (f && !f.value) { f.value = 'potential'; f.dispatchEvent(new Event('change')); }
@@ -13,14 +12,18 @@
       }
     }, 0);
   }));
-  // When other code calls showView (e.g. "Gerar site" from CRM), keep the Discover/Web Validation pair clean.
-  const K = window.Kroma || {};
-  if (K.showView) {
-    const orig = K.showView;
-    K.showView = v => { orig(v); const first = navBtns.find(x => x.dataset.view === v && !x.dataset.focus); navBtns.forEach(x => x.classList.toggle('active', x === first)); document.body.dataset.view = v; };
-  }
-  const discover = navBtns.find(x => x.dataset.view === 'discover' && x.dataset.focus);
-  discover?.classList.remove('active');
+  // app.js marks every button of the active view; keep only one of Discover / Web Validation lit.
+  let focusMode = false;
+  navBtns.forEach(b => b.addEventListener('click', () => { focusMode = !!b.dataset.focus; }, true));
+  const fix = () => {
+    const d = navBtns.filter(x => x.dataset.view === 'discover');
+    if (d.length === 2 && d[0].classList.contains('active') && d[1].classList.contains('active')) {
+      d.forEach(x => x.classList.toggle('active', !!x.dataset.focus === focusMode));
+    }
+  };
+  const mo = new MutationObserver(fix);
+  navBtns.forEach(x => mo.observe(x, { attributes: true, attributeFilter: ['class'] }));
+  fix();
 
   function market() {
     const c = $('country'), l = $('searchLanguage'), m = $('searchCurrency');
