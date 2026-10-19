@@ -1,0 +1,14 @@
+{
+  "pt|braga, portugal": {
+    "displayName": "Braga, Portugal",
+    "bbox": [
+      41.4637304,
+      41.6172027,
+      -8.5260855,
+      -8.2954703
+    ],
+    "lat": 41.5510583,
+    "lon": -8.4280045,
+    "geocoder": "Nominatim"
+  }
+}

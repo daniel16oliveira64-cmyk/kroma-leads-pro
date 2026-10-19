@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kroma Leads Global Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/app.css">
+<link rel="stylesheet" href="/studio.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><span class="brand-mark">K</span>KROMA</div>
+  <div class="tag">Leads Global</div>
+  <nav class="nav">
+    <div class="nav-label">Workspace</div>
+    <button class="active" data-view="discover"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Discover</button>
+    <button data-view="crm"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Leads / CRM</button>
+    <button data-view="discover" data-focus="validation"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Web Validation</button>
+    <button data-view="studio"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg>Website Studio</button>
+    <button data-view="proposal"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>Proposals</button>
+    <div class="nav-label">System</div>
+    <button data-view="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Settings</button>
+  </nav>
+  <div class="side-foot"><div class="k">Mercado atual</div><div class="v" id="sideMarket">—</div><div class="s" id="sideLocale">—</div></div>
+</aside>
+<main class="main">
+
+<section id="discover" class="view active">
+  <div class="top"><div><div class="mini">Discover</div><h1>Descobrir oportunidades</h1><div class="muted">Pesquise negócios em diferentes mercados, valide a presença digital e importe só os melhores.</div></div><button id="manualLead" class="secondary">＋ Adicionar lead</button></div>
+  <div class="stats">
+    <div class="card"><div class="mini">Leads</div><div class="num" id="sTotal">0</div></div>
+    <div class="card"><div class="mini">Novos</div><div class="num" id="sNew">0</div></div>
+    <div class="card"><div class="mini">Contatados</div><div class="num" id="sContacted">0</div></div>
+    <div class="card"><div class="mini">Prévias</div><div class="num" id="sPreview">0</div></div>
+    <div class="card"><div class="mini">Propostas</div><div class="num" id="sProposal">0</div></div>
+  </div>
+  <div class="panel">
+    <div class="search-grid">
+      <div class="field"><label>País</label><select id="country"></select></div>
+      <div class="field"><label>Nicho</label><select id="niche"></select><input id="customNiche" style="display:none;margin-top:6px" placeholder="Nicho personalizado"></div>
+      <div class="field"><label>Cidade</label><input id="city" value="Joinville"></div>
+      <div class="field"><label id="stateLabel">Estado / UF</label><input id="state" value="SC"></div>
+      <div class="field"><label>Bairros / áreas (opcional)</label><input id="regions" placeholder="América, Centro, Anita Garibaldi"></div>
+      <div class="field"><label>Escopo geográfico</label><select id="geoScope"><option value="strict" selected>Cidade / município — estrito</option><option value="nearby">Região próxima</option><option value="region">Distrito / estado — amplo</option></select></div>
+      <div class="field"><label>Máximo</label><select id="maxResults"><option>50</option><option selected>150</option><option>250</option><option>400</option></select></div>
+    </div>
+    <div class="grid3" style="margin-top:10px">
+      <div class="field"><label>Idioma do lead/site</label><select id="searchLanguage"></select></div>
+      <div class="field"><label>Moeda das propostas</label><select id="searchCurrency"></select></div>
+      <div class="field"><label>Mercado</label><input id="marketSummary" readonly></div>
+    </div>
+    <div class="actions" id="validationTools" style="margin-top:13px"><button id="searchBtn">Buscar grátis</button><button id="diagnosticsBtn" class="secondary">Diagnóstico de rede</button><button id="validateSelected" class="secondary">Tentar validação automática</button><button id="reviewSelected" class="secondary">Revisão assistida</button><button id="selectPotential" class="secondary">Selecionar potenciais</button><button id="importSelected" class="green">Importar selecionados</button><span class="mini" id="searchStatus"></span></div>
+    <div class="notice"><strong>Qualificação v1.8:</strong> no escopo <b>Cidade / município — estrito</b>, resultados de municípios vizinhos são descartados mesmo que pertençam ao mesmo distrito/estado. Candidatos de domínio com baixa confiança não reduzem o score. “Nenhum candidato localizado” mantém a oportunidade como <b>Aguardando</b>; ausência de site só vira sinal forte após confirmação manual.</div>
+    <div class="filters"><input id="resultFilter" placeholder="Filtrar resultados..."><select id="digitalFilter"><option value="">Todos</option><option value="potential">Site não informado</option><option value="probable-site">Site provável</option><option value="web-checked">Web validada</option><option value="no-site">Sem site confirmado</option><option value="has-site">Site confirmado</option><option value="phone">Com telefone</option></select></div>
+    <div class="table-wrap"><table><thead><tr><th></th><th>EMPRESA</th><th>CONTATO</th><th>DIGITAL</th><th>VALIDAÇÃO</th><th>OPORTUNIDADE</th></tr></thead><tbody id="resultsBody"></tbody></table></div><div id="resultsEmpty" class="empty">Faça uma busca para começar.</div>
+  </div>
+</section>
+
+<section id="crm" class="view">
+  <div class="top"><div><div class="mini">Leads / CRM</div><h1>CRM comercial</h1><div class="muted">Histórico mais fiel: criar/copiar não significa que você enviou.</div></div><button id="crmAdd" class="secondary">＋ Adicionar lead</button></div>
+  <div class="pipeline" id="pipeline"></div>
+  <div class="panel" style="margin-top:15px">
+    <div class="filters"><input id="crmSearch" placeholder="Buscar lead..."><select id="crmCountry"><option value="">Todos os países</option></select><select id="crmStatus"><option value="">Todos os status</option></select><button class="secondary" id="exportCsv">Exportar CSV</button></div>
+    <div class="table-wrap"><table><thead><tr><th>EMPRESA</th><th>MERCADO</th><th>NICHO</th><th>CONTATO</th><th>STATUS</th><th>VALOR</th><th>AÇÕES</th></tr></thead><tbody id="crmBody"></tbody></table></div><div id="crmEmpty" class="empty">Nenhum lead salvo.</div>
+  </div>
+</section>
+
+<section id="studio" class="view">
+  <div class="ws">
+    <header class="ws-bar">
+      <div class="ws-bar-l"><div class="ws-title">Website Studio</div><select id="siteLead" class="ws-lead"></select><span class="ws-dir" id="previewDirectionLabel"></span><span class="ws-dirty" id="wsDirty" hidden>Alterações não salvas</span></div>
+      <div class="ws-devices" role="tablist"><button class="ws-dev active" data-device="desktop" title="Desktop"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>Desktop</button><button class="ws-dev" data-device="tablet" title="Tablet"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M11 18h2"/></svg>Tablet</button><button class="ws-dev" data-device="mobile" title="Mobile"><svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg>Mobile</button></div>
+      <div class="ws-bar-r"><button id="regenerateSite" class="secondary" title="Nova composição para o mesmo conteúdo">↻ New Direction</button><button id="openPreview" class="ghost">Open Preview</button><button id="downloadSite" class="secondary">Download HTML</button><button id="saveSite">Save</button><button id="wsInspToggle" class="ghost ws-insp-toggle">Inspector</button></div>
+    </header>
+    <div class="ws-body">
+      <aside class="ws-left">
+        <div class="ws-tabs"><button class="ws-tab active" data-tab="content">Content</button><button class="ws-tab" data-tab="brand">Brand</button><button class="ws-tab" data-tab="media">Media</button><button class="ws-tab" data-tab="sections">Sections</button><button class="ws-tab" data-tab="seo">SEO</button></div>
+        <div class="ws-panel" id="wsPanel"></div>
+      </aside>
+      <main class="ws-stage" id="wsStage"><div class="ws-canvas" id="wsCanvas"><iframe id="siteFrame" title="Prévia do site"></iframe></div></main>
+      <aside class="ws-right" id="wsRight"><div id="wsInspector"></div></aside>
+    </div>
+  </div>
+  <div class="ws-toast" id="wsToast"></div>
+</section>
+  </div>
+</section>
+
+<section id="proposal" class="view">
+  <div class="top"><div><div class="mini">Proposals</div><h1>Propostas internacionais</h1><div class="muted">Moeda, idioma e preço padrão acompanham o mercado do lead.</div></div><div class="actions"><button id="printProposal" class="secondary">Imprimir / Salvar PDF</button><button id="saveProposal" class="green">Salvar proposta</button></div></div>
+  <div class="proposal-shell"><div class="panel"><div class="field"><label>Lead</label><select id="proposalLead"></select></div><div class="grid2" style="margin-top:10px"><div class="field"><label>Plano</label><select id="plan"><option value="essential">Essencial</option><option value="professional" selected>Profissional</option><option value="premium">Premium</option><option value="custom">Personalizado</option></select></div><div class="field"><label>Valor</label><input id="projectValue" type="number" step="10"></div><div class="field"><label>Entrada (%)</label><input id="depositPct" type="number" value="50"></div><div class="field"><label>Prazo (dias úteis)</label><input id="deliveryDays" type="number" value="7"></div><div class="field"><label>Manutenção mensal</label><input id="maintenance" type="number"></div><div class="field"><label>Validade (dias)</label><input id="validDays" type="number" value="7"></div></div><div class="field" style="margin-top:10px"><label>Itens incluídos</label><textarea id="proposalItems" rows="9"></textarea></div><div class="field" style="margin-top:10px"><label>Observações</label><textarea id="proposalNotes" rows="4"></textarea></div><div class="actions" style="margin-top:12px"><button id="applyPlan">Aplicar plano</button><button id="copyProposalMessage" class="secondary">Copiar mensagem</button></div><div class="notice">Salvar a proposta marca como <b>Proposta criada</b>, não como enviada. O CRM só muda para enviada quando você definir esse status.</div></div><div id="proposalPreview"></div></div>
+</section>
+
+<section id="settings" class="view">
+  <div class="top"><div><div class="mini">Settings</div><h1>Configurações</h1><div class="muted">Preço por mercado, backup e identidade da Kroma.</div></div></div>
+  <div class="panel" style="margin-top:18px"><div class="grid2"><div class="field"><label>Nome da marca</label><input id="brandName"></div><div class="field"><label>WhatsApp / contato</label><input id="brandWhats"></div></div><div class="divider"></div><h2>Preços padrão por mercado</h2><div id="marketPrices" class="market-table"></div><div class="divider"></div><h2>Backup</h2><div class="backup-actions"><button id="exportBackup" class="secondary">Exportar backup JSON</button><label class="btn secondary" for="importBackup">Importar backup JSON</label><input id="importBackup" type="file" accept="application/json" style="display:none"><button id="clearSearchCache" class="ghost">Limpar cache de pesquisa</button></div><div class="actions" style="margin-top:16px"><button id="saveSettings">Salvar configurações</button></div></div>
+</section>
+
+</main></div>
+
+<dialog id="leadDialog"><form id="leadForm"><h2 id="leadDialogTitle">Adicionar lead</h2><div class="modalgrid"><input type="hidden" id="leadId"><div class="field wide"><label>Empresa *</label><input id="leadName" required></div><div class="field"><label>Nicho *</label><input id="leadNiche" required></div><div class="field"><label>Status</label><select id="leadStatus"></select></div><div class="field"><label>País</label><select id="leadCountry"></select></div><div class="field"><label>Idioma</label><select id="leadLanguage"></select></div><div class="field"><label>Moeda</label><select id="leadCurrency"></select></div><div class="field"><label>Cidade</label><input id="leadCity"></div><div class="field"><label>Estado / região</label><input id="leadRegion"></div><div class="field"><label>Telefone</label><input id="leadPhone"></div><div class="field"><label>Instagram</label><input id="leadInstagram"></div><div class="field wide"><label>Site</label><input id="leadWebsite"></div><div class="field wide"><label>Endereço</label><input id="leadAddress"></div><div class="field wide"><label>Observações</label><textarea id="leadNotes" rows="4"></textarea></div></div><div class="right"><button type="button" class="secondary" id="cancelLead">Cancelar</button><button>Salvar</button></div></form></dialog>
+
+<dialog id="messageDialog"><h2>Mensagem de abordagem</h2><div class="grid2"><div class="field"><label>Tom</label><select id="messageTone"><option value="natural">Natural</option><option value="direct">Direto</option><option value="professional">Profissional</option></select></div><div class="field"><label>Idioma</label><input id="messageLanguage" readonly></div></div><div class="field" style="margin-top:10px"><textarea id="messageText" rows="11"></textarea></div><div class="dialog-note">Copiar a mensagem não altera o status do lead automaticamente.</div><div class="right"><button class="secondary" id="closeMessage">Fechar</button><button id="copyMessage">Copiar</button></div></dialog>
+
+<dialog id="reviewDialog" class="review-dialog">
+  <div class="review-top">
+    <div>
+      <div class="mini" id="reviewProgress">Revisão 1/1</div>
+      <h2 id="reviewName" style="margin:4px 0 6px">Empresa</h2>
+      <div class="muted" id="reviewAddress"></div>
+    </div>
+    <button id="closeReview" class="ghost" type="button">Fechar</button>
+  </div>
+  <div class="review-state" id="reviewState"></div>
+  <div class="review-links">
+    <a id="reviewGoogle" class="btn secondary" target="_blank" rel="noopener">Abrir Google</a>
+    <a id="reviewBing" class="btn secondary" target="_blank" rel="noopener">Abrir Bing</a>
+    <a id="reviewInstagram" class="btn secondary" target="_blank" rel="noopener">Procurar Instagram</a>
+  </div>
+  <div class="notice" style="margin-top:12px">Abra pelo menos Google e Instagram. Depois classifique o lead abaixo. <b>“Sem site” só deve ser marcado após revisão manual.</b></div>
+  <div class="review-classify">
+    <button id="reviewNoSite" class="green" type="button">✓ Sem site</button>
+    <button id="reviewHasSite" class="secondary" type="button">Tem site</button>
+    <button id="reviewHasInstagram" class="secondary" type="button">Instagram encontrado</button>
+    <button id="reviewIgnore" class="danger" type="button">Ignorar</button>
+  </div>
+  <div class="review-nav">
+    <button id="reviewPrev" class="secondary" type="button">← Anterior</button>
+    <button id="reviewNext" type="button">Próximo →</button>
+  </div>
+</dialog>
+
+<script src="/app.js"></script>
+<script src="/site-studio.js"></script>
+<script src="/shell.js"></script>
+</body>
+</html>

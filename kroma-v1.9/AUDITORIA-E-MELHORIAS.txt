@@ -1,0 +1,82 @@
+AUDITORIA DA VERSÃO ANTERIOR → MELHORIAS DA V3
+===============================================
+
+1. INTERNACIONALIZAÇÃO
+ANTES: Brasil fixo, +55, BRL, mensagens em português.
+AGORA: país, código telefónico, idioma, moeda e preço por mercado ficam no lead.
+
+2. BUSCA GLOBAL
+ANTES: Nominatim usava countrycodes=br e a localização terminava em Brasil.
+AGORA: o país é enviado ao servidor e muda geocodificação, busca e validação web.
+
+3. VALIDAÇÃO DE SITE
+ANTES: o OSM tinha peso excessivo no sinal de “sem site”.
+AGORA: OSM é apenas uma fonte inicial. A ausência só ganha peso forte após confirmação manual.
+
+4. GERADOR VISUAL
+ANTES: quatro templates ainda compartilhavam bastante estrutura.
+AGORA: onze direções criativas com hero, tipografia, seções, ordem e composição distintas.
+
+5. PADRONIZAÇÃO ENTRE NICHOS
+ANTES: estética, Pilates e odontologia podiam parecer variações do mesmo site.
+AGORA: o nicho escolhe famílias visuais próprias e recebe componentes específicos.
+
+6. PADRONIZAÇÃO ENTRE NEGÓCIOS DO MESMO NICHO
+ANTES: mesma estrutura para quase todos.
+AGORA: hash do negócio + seed de variação escolhem direções diferentes. “Nova direção” avança a seed.
+
+7. TEXTO “CARA DE IA”
+ANTES: frases muito genéricas e repetição de blocos.
+AGORA: copy editorial escrita por nicho e idioma, mais curta e orientada a cada mercado.
+Ainda é rascunho: revisão humana continua obrigatória.
+
+8. PROPOSTAS
+ANTES: BRL fixo e salvar = enviada.
+AGORA: moeda por lead, preços por mercado e status “Proposta criada”.
+
+9. CRM
+ANTES: copiar mensagem podia marcar contato como realizado.
+AGORA: ações de preparação não fingem que houve envio.
+
+10. SEGURANÇA DOS DADOS
+ANTES: apenas localStorage / CSV.
+AGORA: backup completo em JSON + CSV.
+
+11. DUPLICADOS
+ANTES: comparação simples por nome.
+AGORA: nome + país e cauda do telefone ajudam a evitar duplicação.
+
+12. FOTOS
+ANTES: hero + galeria limitada.
+AGORA: logo, hero, imagem Sobre e até seis fotos de galeria; uploads incorporados no HTML.
+
+13. SITE EXPORTADO
+AGORA inclui:
+- responsividade
+- fontes editoriais
+- SEO básico
+- Open Graph
+- LocalBusiness schema
+- mapa opcional
+- WhatsApp internacional
+- prova social opcional
+- FAQ
+- animação leve
+
+LIMITAÇÕES QUE CONTINUAM EXISTINDO
+---------------------------------
+- OpenStreetMap não tem todos os negócios.
+- busca web gratuita não é equivalente a uma API comercial.
+- cobertura varia por país/cidade.
+- o sistema não deve inventar serviços, avaliações, depoimentos ou credenciais.
+- fotos e marcas precisam de autorização para uso final.
+- para volume comercial muito grande, uma fonte de dados paga/contratada pode ser necessária no futuro.
+
+
+QUALIFICAÇÃO v1.9
+------------------
+Problema observado: Braga aceitava negócios de Famalicão, Barcelos e Guimarães porque distrito/condado também continha Braga.
+Correção: separação entre localidade primária e distrito/estado, com escopo explícito escolhido pelo utilizador.
+
+Problema observado: domínio genérico 4ever.com aparecia como candidato de uma empresa chamada Centro de Estética 4Ever.
+Correção: domínios adivinhados só entram quando há evidência forte de identidade (telefone, cidade + múltiplos tokens da marca ou correspondência equivalente). Candidatos abaixo de 50% não alteram o score.
