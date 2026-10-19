@@ -1,0 +1,157 @@
+{
+  "{\"version\":\"1.8\",\"nicheKey\":\"aesthetics\",\"customNiche\":\"\",\"location\":\"Braga, Portugal\",\"bbox\":[41.4637304,41.6172027,-8.5260855,-8.2954703],\"maxResults\":50,\"countryCode\":\"PT\",\"geoScope\":\"strict\"}": {
+    "time": 1792440126142,
+    "data": {
+      "results": [
+        {
+          "osmKey": "photon-N-1953621427",
+          "name": "Centro de Estética",
+          "nicheKey": "aesthetics",
+          "niche": "Clínica de estética / Med Spa",
+          "region": "Braga",
+          "city": "Braga",
+          "country": "PT",
+          "address": "Rua Doutor Egídio Guimarães · Nogueira, Fraião e Lamaçães · Braga · 4719-006 · Portugal",
+          "phone": "",
+          "whatsapp": "",
+          "instagram": "",
+          "website": "",
+          "email": "",
+          "openingHours": "",
+          "lat": 41.5448992,
+          "lon": -8.4022264,
+          "source": "Photon",
+          "sources": [
+            "Photon"
+          ],
+          "discoveryQuality": "strict"
+        },
+        {
+          "osmKey": "photon-N-11764538408",
+          "name": "Centro de Estética 4Ever",
+          "nicheKey": "aesthetics",
+          "niche": "Clínica de estética / Med Spa",
+          "region": "Braga",
+          "city": "Braga",
+          "country": "PT",
+          "address": "Rua Tomás de Figueiredo · São Vítor · Braga · 4710-353 · Portugal",
+          "phone": "",
+          "whatsapp": "",
+          "instagram": "",
+          "website": "",
+          "email": "",
+          "openingHours": "",
+          "lat": 41.5590005,
+          "lon": -8.4051759,
+          "source": "Photon",
+          "sources": [
+            "Photon"
+          ],
+          "discoveryQuality": "strict"
+        },
+        {
+          "osmKey": "photon-N-14058370729",
+          "name": "Lina Cabelo & Estética",
+          "nicheKey": "aesthetics",
+          "niche": "Clínica de estética / Med Spa",
+          "region": "Braga",
+          "city": "Braga",
+          "country": "PT",
+          "address": "Rua Dom Rodrigo da Cunha · Agrelo · Braga · 4715-179 · Portugal",
+          "phone": "",
+          "whatsapp": "",
+          "instagram": "",
+          "website": "",
+          "email": "",
+          "openingHours": "",
+          "lat": 41.5304889,
+          "lon": -8.4120031,
+          "source": "Photon",
+          "sources": [
+            "Photon"
+          ],
+          "discoveryQuality": "strict"
+        },
+        {
+          "osmKey": "photon-W-170673440",
+          "name": "Marta Cabeleireiro e Estética",
+          "nicheKey": "aesthetics",
+          "niche": "Clínica de estética / Med Spa",
+          "region": "Braga",
+          "city": "Braga",
+          "country": "PT",
+          "address": "Rua Cónego Luciano Afonso dos Santos · São Vicente · Braga · 4700-365 · Portugal",
+          "phone": "",
+          "whatsapp": "",
+          "instagram": "",
+          "website": "",
+          "email": "",
+          "openingHours": "",
+          "lat": 41.5620064,
+          "lon": -8.4194375,
+          "source": "Photon",
+          "sources": [
+            "Photon"
+          ],
+          "discoveryQuality": "strict"
+        },
+        {
+          "osmKey": "photon-N-13422401684",
+          "name": "R Cabeleireiro & Estética",
+          "nicheKey": "aesthetics",
+          "niche": "Clínica de estética / Med Spa",
+          "region": "Braga",
+          "city": "Braga",
+          "country": "PT",
+          "address": "Rua de Santo Adrião · 130 · Quinta da Capela · Braga · 4715-263 · Portugal",
+          "phone": "",
+          "whatsapp": "",
+          "instagram": "",
+          "website": "",
+          "email": "",
+          "openingHours": "",
+          "lat": 41.5423546,
+          "lon": -8.414721,
+          "source": "Photon",
+          "sources": [
+            "Photon"
+          ],
+          "discoveryQuality": "strict"
+        },
+        {
+          "osmKey": "photon-N-14058344618",
+          "name": "Zita Gabinete de estética",
+          "nicheKey": "aesthetics",
+          "niche": "Clínica de estética / Med Spa",
+          "region": "Braga",
+          "city": "Braga",
+          "country": "PT",
+          "address": "Rua Dom Rodrigo da Cunha · Agrelo · Braga · 4715-166 · Portugal",
+          "phone": "",
+          "whatsapp": "",
+          "instagram": "",
+          "website": "",
+          "email": "",
+          "openingHours": "",
+          "lat": 41.5312586,
+          "lon": -8.4116019,
+          "source": "Photon",
+          "sources": [
+            "Photon"
+          ],
+          "discoveryQuality": "strict"
+        }
+      ],
+      "location": "Braga, Portugal",
+      "source": "Photon",
+      "sources": [
+        "Photon"
+      ],
+      "warning": "Overpass indisponível nesta rede; usando Photon.",
+      "warnings": [
+        "Overpass indisponível: Overpass indisponível nesta rede. overpass.kumi.systems: POST=timeout após 5s | GET=timeout após 4s | overpass.private.coffee: POST=timeout após 5s | GET=timeout após 4s | lz4.overpass-api.de: POST=timeout após 5s | GET=timeout após 4s | overpass-api.de: POST=POST HTTP 502 | GET=GET HTTP 502"
+      ],
+      "filteredOut": 102
+    }
+  }
+}
